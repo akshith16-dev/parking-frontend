@@ -1,0 +1,114 @@
+.page { padding: 0; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.pageTitle {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.content {
+  padding: 2rem;
+}
+
+.searchBar {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 9px 14px;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 13px;
+  outline: none;
+  margin-bottom: 1.2rem;
+  transition: border 0.15s;
+}
+.searchBar:focus { border-color: var(--accent); }
+
+.filterRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.filterBtn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.12s;
+  font-family: var(--font);
+}
+.filterBtn:hover { color: var(--text); }
+.active {
+  background: rgba(110, 231, 183, 0.15);
+  border-color: rgba(110, 231, 183, 0.4);
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.slotCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.slotCard:hover { border-color: var(--border2); transform: translateY(-1px); }
+.available { border-color: rgba(110, 231, 183, 0.2); }
+.unavailable { opacity: 0.55; }
+
+.slotNum {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--mono);
+  letter-spacing: -0.5px;
+}
+
+.slotStatus {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.dotGreen { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+.dotRed { background: var(--danger); }
+
+.slotMeta { display: flex; gap: 4px; flex-wrap: wrap; }
+
+.slotActions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
