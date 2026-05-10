@@ -8,3 +8,61 @@
   overflow-y: auto;
   background: var(--bg);
 }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .sidebarWrapper {
+    position: fixed;
+    top: 0;
+    left: -220px;
+    height: 100vh;
+    z-index: 999;
+    transition: left 0.25s ease;
+  }
+
+  .sidebarWrapper.open {
+    left: 0;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .main {
+    padding-top: 3.5rem;
+  }
+}
