@@ -36,7 +36,7 @@ function IconLogout() {
   )
 }
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }) {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
   const isAdmin = user?.role === 'admin'
@@ -56,21 +56,22 @@ export default function Sidebar() {
           </svg>
         </div>
         <span>ParkSmart</span>
+        <button className={styles.closeBtn} onClick={onClose}>✕</button>
       </div>
 
       <div className={styles.navSection}>Menu</div>
 
       {isAdmin && (
-        <NavLink to="/dashboard" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+        <NavLink to="/dashboard" onClick={onClose} className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
           <IconChart /><span>Dashboard</span>
         </NavLink>
       )}
 
-      <NavLink to="/slots" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+      <NavLink to="/slots" onClick={onClose} className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
         <IconGrid /><span>Parking Slots</span>
       </NavLink>
 
-      <NavLink to="/bookings" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+      <NavLink to="/bookings" onClick={onClose} className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
         <IconBookmark /><span>{isAdmin ? 'All Bookings' : 'My Bookings'}</span>
       </NavLink>
 

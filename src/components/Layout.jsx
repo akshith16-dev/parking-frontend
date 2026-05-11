@@ -8,7 +8,7 @@ export default function Layout() {
 
   return (
     <div className={styles.shell}>
-      <button className={styles.hamburger} onClick={() => setSidebarOpen(!sidebarOpen)}>
+      <button className={styles.hamburger} onClick={() => setSidebarOpen(true)}>
         <span /><span /><span />
       </button>
 

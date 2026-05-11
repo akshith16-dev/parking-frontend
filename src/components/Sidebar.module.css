@@ -32,6 +32,23 @@
   flex-shrink: 0;
 }
 
+.closeBtn {
+  display: none;
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.closeBtn:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+
 .navSection {
   font-size: 10px;
   color: var(--faint);
@@ -121,4 +138,10 @@
 .logoutBtn:hover {
   color: var(--danger) !important;
   background: rgba(248, 113, 113, 0.08) !important;
+}
+
+@media (max-width: 768px) {
+  .closeBtn {
+    display: block;
+  }
 }
